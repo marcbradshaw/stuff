@@ -4,14 +4,30 @@
 
 function add_to_vimrc {
  
-    LINE=$1
+    KEY=$1
+    VALUE=$2
 
-    SEARCH=`grep "^$LINE$" ~/.vimrc`
-
-    if [ "$LINE" != "$SEARCH" ]
+    if [ "$VALUE" == "" ]
     then
-        echo Adding "$LINE" to .vimrc
-        echo $LINE >> ~/.vimrc
+        SEARCHLINE="^$KEY$"
+    else
+        SEARCHLINE="^$KEY="
+    fi
+
+    FOUNDLINE=`grep "$SEARCHLINE" ~/.vimrc`
+
+    if [ "$FOUNDLINE" == "" ]
+    then
+
+        if [ "$VALUE" == "" ]
+        then
+            ADDLINE="$KEY"
+        else
+            ADDLINE="$KEY=$VALUE"
+        fi
+
+        echo Adding "$ADDLINE" to .vimrc
+        echo $ADDLINE >> ~/.vimrc
     fi
 
 }
@@ -60,7 +76,7 @@ add_to_vimrc "execute pathogen#infect()"
 get_bundle_from_github jlanzarotta bufexplorer
 
 get_bundle_from_github airblade vim-gitgutter
-add_to_vimrc "let g:gitgutter_highlight_lines = 1"
+add_to_vimrc "let g:gitgutter_highlight_lines " " 1"
 add_to_vimrc "set nu"
 
 get_bundle_from_github tpope vim-fugitive
@@ -68,14 +84,14 @@ get_bundle_from_github tpope vim-fugitive
 get_bundle_from_github scrooloose nerdtree
 
 get_bundle_from_github scrooloose syntastic
-add_to_vimrc "let g:syntastic_enable_perl_checker = 0"
+add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
 add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
 
 add_to_vimrc "set expandtab"
-add_to_vimrc "set softtabstop=4"
-add_to_vimrc "set shiftwidth=4"
-add_to_vimrc "set tabpagemax=500"
+add_to_vimrc "set softtabstop" "4"
+add_to_vimrc "set shiftwidth" "4"
+add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
-add_to_vimrc "set showtabline=2"
+add_to_vimrc "set showtabline" "2"
 
