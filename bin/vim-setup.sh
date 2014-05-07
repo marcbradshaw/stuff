@@ -90,6 +90,8 @@ add_to_vimrc "filetype plugin indent on"
 
 get_bundle_from_github kien rainbow_parentheses.vim
 
+get_bundle_from_github maxbrunsfeld vim-yankstack
+
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
 add_to_vimrc "set shiftwidth" "4"
