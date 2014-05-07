@@ -76,7 +76,7 @@ add_to_vimrc "execute pathogen#infect()"
 get_bundle_from_github jlanzarotta bufexplorer
 
 get_bundle_from_github airblade vim-gitgutter
-add_to_vimrc "let g:gitgutter_highlight_lines " " 1"
+add_to_vimrc "let g:gitgutter_highlight_lines " " 0"
 add_to_vimrc "set nu"
 
 get_bundle_from_github tpope vim-fugitive
@@ -87,6 +87,8 @@ get_bundle_from_github scrooloose syntastic
 add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
 add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
+
+get_bundle_from_github kien rainbow_parentheses.vim
 
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
