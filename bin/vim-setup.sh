@@ -52,6 +52,25 @@ function get_bundle_from_github {
 
 }
 
+function get_bundle_from_google_code {
+
+    REPO=$1
+    DIR=$2
+
+    echo "Processing $REPO"
+
+    cd ~/.vim/bundle
+
+    if [ ! -d $DIR ]
+    then
+        svn checkout http://$REPO.googlecode.com/svn/trunk/ $DIR
+    fi
+
+    pushd $DIR
+    svn up
+    popd
+
+}
 
 #
 # Create directories if required
@@ -91,6 +110,8 @@ add_to_vimrc "filetype plugin indent on"
 get_bundle_from_github kien rainbow_parentheses.vim
 
 get_bundle_from_github maxbrunsfeld vim-yankstack
+
+get_bundle_from_google_code conque conque-read-only 
 
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
