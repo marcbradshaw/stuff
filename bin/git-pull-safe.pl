@@ -44,6 +44,11 @@ sub main {
     return;
 }
 
+sub git_get_branch {
+    my $branch = `git branch | grep '^\*' | cut -b3-`;
+    return $branch;
+}
+
 sub get_git_root {
 
     # Change to and return the current working tree root
