@@ -129,3 +129,8 @@ add_to_vimrc "autocmd BufEnter * :redraw!"
 add_to_vimrc "autocmd BufWritePost * :redraw!"
 add_to_vimrc "autocmd FocusGained * :redraw!"
 
+add_to_vimrc "set foldmethod" "indent"
+add_to_vimrc "set foldnestmax" "10"
+add_to_vimrc "set nofoldenable"
+add_to_vimrc "set foldlevel" "1"
+
