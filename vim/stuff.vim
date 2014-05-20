@@ -2,7 +2,7 @@
 function FindSubs()
     lvimgrep  /^\s*sub /j %
     lvimgrepa /^\s*method /j %
-    lopen
+    execute "lopen " . (winheight(0)/2)
 endfunction
 command Subs call FindSubs() 
 
