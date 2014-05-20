@@ -9,12 +9,12 @@ function add_to_vimrc {
 
     if [ "$VALUE" == "" ]
     then
-        SEARCHLINE="^$KEY$"
+        FOUNDLINE=`grep -F -x "$KEY" ~/.vimrc`
     else
-        SEARCHLINE="^$KEY="
+        # Not quite 100%, but close enough
+        # Does not enforce whole line, FIXME
+        FOUNDLINE=`grep -F "$KEY" ~/.vimrc`
     fi
-
-    FOUNDLINE=`grep "$SEARCHLINE" ~/.vimrc`
 
     if [ "$FOUNDLINE" == "" ]
     then
@@ -27,7 +27,7 @@ function add_to_vimrc {
         fi
 
         echo Adding "$ADDLINE" to .vimrc
-        echo $ADDLINE >> ~/.vimrc
+        echo "$ADDLINE" >> ~/.vimrc
     fi
 
 }
