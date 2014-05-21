@@ -120,6 +120,8 @@ add_to_vimrc "let g:session_autoload = 'no'"
 
 get_bundle_from_github vim-perl vim-perl
 
+get_bundle_from_github tpope vim-markdown
+
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
 add_to_vimrc "set shiftwidth" "4"
