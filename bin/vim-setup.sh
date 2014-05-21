@@ -118,6 +118,8 @@ get_bundle_from_github xolox vim-session
 add_to_vimrc "let g:session_autosave = 'no'"
 add_to_vimrc "let g:session_autoload = 'no'"
 
+get_bundle_from_github vim-perl vim-perl
+
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
 add_to_vimrc "set shiftwidth" "4"
