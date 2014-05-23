@@ -43,8 +43,16 @@ function get_bundle_from_github {
 
     if [ ! -d $PROJECT ]
     then
-        git clone https://github.com/$OWNER/$PROJECT.git
+        cd ~/.vim/bundle.old
+        if [ ! -d $PROJECT ]
+        then
+            mv -i $PROJECT ../bundle/
+        else
+            cd ~/.vim/bundle
+            git clone https://github.com/$OWNER/$PROJECT.git
+        fi
     fi
+    cd ~/.vim/bundle
 
     pushd $PROJECT
     git pull
@@ -63,13 +71,34 @@ function get_bundle_from_google_code {
 
     if [ ! -d $DIR ]
     then
-        svn checkout http://$REPO.googlecode.com/svn/trunk/ $DIR
+        cd ~/.vim/bundle.old
+        if [ ! -d $DIR ]
+        then
+            mv -i $DIR ../bundle/
+        else
+            cd ~/.vim/bundle
+            svn checkout http://$REPO.googlecode.com/svn/trunk/ $DIR
+        fi
     fi
+    cd ~/.vim/bundle
 
     pushd $DIR
     svn up
     popd
 
+}
+
+function hide_bundle {
+    BUNDLE=$1
+
+    echo "Processing $BUNDLE"
+
+    cd ~/.vim/bundle
+    if [ -d $BUNDLE ]
+    then
+        mv -i $BUNDLE ../bundle.old/
+        echo "Moving bundle";
+    fi
 }
 
 #
@@ -78,6 +107,7 @@ function get_bundle_from_google_code {
 
 cd ~
 mkdir -p .vim/bundle
+mkdir -p .vim/bundle.old
 mkdir -p .vim/autoload
 
 cd ~/.vim/
@@ -108,8 +138,10 @@ add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
 
 # get_bundle_from_github kien rainbow_parentheses.vim
+hide_bundle rainbow_parentheses.vim
 
 # get_bundle_from_github maxbrunsfeld vim-yankstack
+hide_bundle vim-yankstack
 
 get_bundle_from_google_code conque conque-read-only 
 
@@ -117,6 +149,8 @@ get_bundle_from_google_code conque conque-read-only
 # get_bundle_from_github xolox vim-session
 # add_to_vimrc "let g:session_autosave = 'no'"
 # add_to_vimrc "let g:session_autoload = 'no'"
+hide_bundle vim-misc
+hide_bundle vim-session
 
 get_bundle_from_github vim-perl vim-perl
 
