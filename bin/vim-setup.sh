@@ -107,16 +107,16 @@ add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
 add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
 
-get_bundle_from_github kien rainbow_parentheses.vim
+# get_bundle_from_github kien rainbow_parentheses.vim
 
-get_bundle_from_github maxbrunsfeld vim-yankstack
+# get_bundle_from_github maxbrunsfeld vim-yankstack
 
 get_bundle_from_google_code conque conque-read-only 
 
-get_bundle_from_github xolox vim-misc
-get_bundle_from_github xolox vim-session
-add_to_vimrc "let g:session_autosave = 'no'"
-add_to_vimrc "let g:session_autoload = 'no'"
+# get_bundle_from_github xolox vim-misc
+# get_bundle_from_github xolox vim-session
+# add_to_vimrc "let g:session_autosave = 'no'"
+# add_to_vimrc "let g:session_autoload = 'no'"
 
 get_bundle_from_github vim-perl vim-perl
 
@@ -129,12 +129,12 @@ add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
 add_to_vimrc "set showtabline" "2"
 
-add_to_vimrc "autocmd BufEnter * :redraw!"
-add_to_vimrc "autocmd BufWritePost * :redraw!"
-add_to_vimrc "autocmd FocusGained * :redraw!"
+# add_to_vimrc "autocmd BufEnter * :redraw!"
+# add_to_vimrc "autocmd BufWritePost * :redraw!"
+# add_to_vimrc "autocmd FocusGained * :redraw!"
 
-add_to_vimrc "set foldmethod" "indent"
-add_to_vimrc "set foldnestmax" "1"
-add_to_vimrc "set nofoldenable"
-add_to_vimrc "set foldlevel" "1"
+# add_to_vimrc "set foldmethod" "indent"
+# add_to_vimrc "set foldnestmax" "1"
+# add_to_vimrc "set nofoldenable"
+# add_to_vimrc "set foldlevel" "1"
 
