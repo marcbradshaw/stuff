@@ -165,6 +165,11 @@ add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
 add_to_vimrc "set showtabline" "2"
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $DIR
+cp ../vim/stuff.vim ~/.vim/
+add_to_vimrc "source ~/.vim/stuff.vim"
+
 # add_to_vimrc "autocmd BufEnter * :redraw!"
 # add_to_vimrc "autocmd BufWritePost * :redraw!"
 # add_to_vimrc "autocmd FocusGained * :redraw!"
