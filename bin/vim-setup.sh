@@ -44,7 +44,7 @@ function get_bundle_from_github {
     if [ ! -d $PROJECT ]
     then
         cd ~/.vim/bundle.old
-        if [ ! -d $PROJECT ]
+        if [ -d $PROJECT ]
         then
             mv -i $PROJECT ../bundle/
         else
@@ -72,7 +72,7 @@ function get_bundle_from_google_code {
     if [ ! -d $DIR ]
     then
         cd ~/.vim/bundle.old
-        if [ ! -d $DIR ]
+        if [ -d $DIR ]
         then
             mv -i $DIR ../bundle/
         else
