@@ -6,13 +6,20 @@ function FindSubs()
 endfunction
 command Subs call FindSubs() 
 
-function TidyDiff()
+function TidyDiff(script)
+
     let TempFile = tempname()
     let SaveModified = &modified
     exe 'w ' . TempFile
     let &modified = SaveModified
-    exe 'split ' . TempFile
+
+    exe 'vertical diffsplit ' . TempFile
+    exe 'set modifiable'
+    exe 'set noro'
     exe '%! ' . a:script
+    exe 'w'
+    exe 'set ro'
+    exe 'set nomodifiable'
 endfunction
 command TidyDiff call TidyDiff('perltidy')
 
