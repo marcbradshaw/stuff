@@ -1,5 +1,9 @@
 #!/bin/bash
 
+MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $MYDIR
+cd ../
+
 # Setup vim just the way I likes it
 
 function add_to_vimrc {
@@ -165,10 +169,11 @@ add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
 add_to_vimrc "set showtabline" "2"
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $DIR
+pushd $MYDIR
 cp ../vim/stuff.vim ~/.vim/
+popd
 add_to_vimrc "source ~/.vim/stuff.vim"
+
 
 # add_to_vimrc "autocmd BufEnter * :redraw!"
 # add_to_vimrc "autocmd BufWritePost * :redraw!"
