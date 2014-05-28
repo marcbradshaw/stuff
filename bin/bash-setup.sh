@@ -76,6 +76,13 @@ cp ../remote/git/contrib/completion/git-prompt.sh ~/.bash
 
 add_to_bashrc "source ~/.bash/git-completion.bash"
 add_to_bashrc "source ~/.bash/git-prompt.sh"
+
+get_from_github cxreg smartcd
+cd $MYDIR
+pushd ../remote/smartcd
+make install
+popd
+
 add_to_bashrc "export GIT_PS1_SHOWDIRTYSTATE=1"
 # add PS1 here
 
