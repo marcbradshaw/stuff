@@ -83,6 +83,6 @@ pushd ../remote/smartcd
 make install
 popd
 
-add_to_bashrc "PS1" "\"\[\e[1;32m\]\u\[\e[1;31m\]@\h \[\e[1;33m\]\w\[\e[0m\]\$(__git_ps1 \" (%s)\")$ \""
+add_to_bashrc "PS1" "'\[\e[1;32m\]\u\[\e[1;31m\]@\h \[\e[1;33m\]\w\[\e[0m\]\$(__git_ps1 \" (%s)\")$ '"
 add_to_bashrc "export GIT_PS1_SHOWDIRTYSTATE=1"
 
