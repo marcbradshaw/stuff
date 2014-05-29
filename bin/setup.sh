@@ -5,5 +5,5 @@ cd $MYDIR
 cd ../
 
 bin/vim-setup.sh
-vin/bash-setup.sh
+bin/bash-setup.sh
 
