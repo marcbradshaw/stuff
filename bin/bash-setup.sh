@@ -73,16 +73,15 @@ get_from_github git git
 cd $MYDIR
 cp ../remote/git/contrib/completion/git-completion.bash ~/.bash
 cp ../remote/git/contrib/completion/git-prompt.sh ~/.bash
+cp ../bash/stuff.sh ~/.bash
 
 add_to_bashrc "source ~/.bash/git-completion.bash"
 add_to_bashrc "source ~/.bash/git-prompt.sh"
+add_to_bashrc "source ~/.bash/stuff.sh"
 
 get_from_github cxreg smartcd
 cd $MYDIR
 pushd ../remote/smartcd
 make install
 popd
-
-add_to_bashrc "PS1" "'\[\e[1;32m\]\u\[\e[1;31m\]@\h \[\e[1;33m\]\w\[\e[1;32m\]\$(__git_ps1 \"(%s)\")\[\e[0m\]$ '"
-add_to_bashrc "export GIT_PS1_SHOWDIRTYSTATE=1"
 
