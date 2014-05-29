@@ -16,7 +16,7 @@ sub main {
     # TODO allow user to specify repo and spec on command line
 
     my $repo = 'origin';
-    my $spec = q{}; # 'master';
+    my $spec = `git rev-parse --abbrev-ref HEAD`;
 
     git_status();
     git_fetch({
@@ -42,11 +42,6 @@ sub main {
         });
     }
     return;
-}
-
-sub git_get_branch {
-    my $branch = `git branch | grep '^\*' | cut -b3-`;
-    return $branch;
 }
 
 sub get_git_root {
@@ -158,7 +153,7 @@ sub cmd {
 
 sub header {
     my ( $title ) = @_;
-    print "**** $title ****\n";
+    print "* $title\n";
     return;
 }
 
