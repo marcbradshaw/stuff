@@ -68,6 +68,9 @@ cd $MYDIR
 cd ../
 mkdir -p remote
 
+mkdir -p ~/local/bin
+mkdir -p ~/bin
+
 get_from_github git git
 
 cd $MYDIR
@@ -75,9 +78,18 @@ cp ../remote/git/contrib/completion/git-completion.bash ~/.bash
 cp ../remote/git/contrib/completion/git-prompt.sh ~/.bash
 cp ../bash/stuff.sh ~/.bash
 
-add_to_bashrc "source ~/.bash/git-completion.bash"
-add_to_bashrc "source ~/.bash/git-prompt.sh"
 add_to_bashrc "source ~/.bash/stuff.sh"
+
+cd $MYDIR
+cd ../
+cp bin/git-pullsafe ~/bin/
+
+get_from_github visionmedia git-extras
+cd $MYDIR
+pushd ../remote/git-extras
+export PREFIX=~/local/
+make install
+popd
 
 get_from_github cxreg smartcd
 cd $MYDIR
