@@ -10,10 +10,10 @@ PREFIX=$PWD
 cd $MYDIR
 cd ../
 pushd remote/git
-    git pull
-    make configure
-    ./configure --prefix=$PREFIX
-    make
+    git pull &&
+    make configure &&
+    ./configure --prefix=$PREFIX &&
+    make &&
     make install
 popd
 
