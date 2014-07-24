@@ -6,5 +6,5 @@ cd ../
 
 bin/vim-setup.sh
 bin/bash-setup.sh
-bin/perl-setup.sh
+bin/perl-setup.pl
 
