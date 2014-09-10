@@ -49,7 +49,7 @@ if ( ! $has_cpanm ) {
 }
 
 my @modules = qw{
-    App::cpanoutdated
+    App::cpanoutdated App::cpanlistchanges
 };
 my @install_modules;
 
