@@ -15,7 +15,7 @@ git checkout $RELEASEBRANCH
 git pull
 
 make clean && \
-sh Configure -Dprefix=/home/marc/perl5.20 -des && \
+sh Configure -Dprefix=/home/$USER/perl5.20 -des && \
 make && \
 make test && \
 make install
