@@ -9,9 +9,12 @@ export EDITOR=vim
 
 export PATH=~/bin:~/local/bin:~/MARC/stuff/bin:$PATH
 
-if [ "$USER" != "root" ]
-then
-    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+if [ ! -f ~/.no-local-lib ]
+then 
+    if [ "$USER" != "root" ]
+    then
+        eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+    fi
 fi
 
 PS1='\[\e[1;32m\]\u\[\e[1;31m\]@\h \[\e[1;33m\]\w\[\e[1;31m\]$(__git_ps1 "(\[\e[1;32m\]%s\[\e[1;31m\])")\[\e[0m\]$ '
