@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export TERM='xterm-256color'
+
 source ~/.bash/git-completion.bash
 source ~/.bash/git-prompt.sh
 

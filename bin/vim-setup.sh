@@ -126,7 +126,8 @@ popd
 
 add_to_vimrc "execute pathogen#infect()"
 
-get_bundle_from_github jlanzarotta bufexplorer
+#get_bundle_from_github jlanzarotta bufexplorer
+hide_bundle bufexplorer
 
 get_bundle_from_github airblade vim-gitgutter
 add_to_vimrc "let g:gitgutter_highlight_lines " " 0"
@@ -134,7 +135,8 @@ add_to_vimrc "set nu"
 
 get_bundle_from_github tpope vim-fugitive
 
-get_bundle_from_github scrooloose nerdtree
+#get_bundle_from_github scrooloose nerdtree
+hide_bundle nerdtree
 
 get_bundle_from_github scrooloose syntastic
 add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
@@ -161,6 +163,19 @@ get_bundle_from_github vim-perl vim-perl
 get_bundle_from_github tpope vim-markdown
 
 get_bundle_from_github hotchpotch perldoc-vim
+
+get_bundle_from_github bling vim-airline
+add_to_vimrc "let g:airline#extensions#tabline#enabled = 1"
+add_to_vimrc "set laststatus=2"
+add_to_vimrc "let g:airline_powerline_fonts = 1"
+
+mkdir -p ~/.vim/tmp
+pushd ~/.vim/tmp
+git clone https://github.com/powerline/fonts.git
+cd fonts
+git pull
+./install.sh
+popd
 
 add_to_vimrc "set expandtab"
 add_to_vimrc "set softtabstop" "4"
