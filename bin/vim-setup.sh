@@ -143,8 +143,12 @@ add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
 add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
 
-# get_bundle_from_github kien rainbow_parentheses.vim
-hide_bundle rainbow_parentheses.vim
+get_bundle_from_github kien rainbow_parentheses.vim
+#hide_bundle rainbow_parentheses.vim
+add_to_vimrc "au VimEnter * RainbowParenthesesToggle"
+add_to_vimrc "au Syntax * RainbowParenthesesLoadRound"
+add_to_vimrc "au Syntax * RainbowParenthesesLoadSquare"
+add_to_vimrc "au Syntax * RainbowParenthesesLoadBraces"
 
 # get_bundle_from_github maxbrunsfeld vim-yankstack
 hide_bundle vim-yankstack
