@@ -135,8 +135,10 @@ add_to_vimrc "set nu"
 
 get_bundle_from_github tpope vim-fugitive
 
-#get_bundle_from_github scrooloose nerdtree
-hide_bundle nerdtree
+get_bundle_from_github scrooloose nerdtree
+#hide_bundle nerdtree
+
+get_bundle_from_github scrooloose nerdcommenter
 
 get_bundle_from_github scrooloose syntastic
 add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
@@ -172,6 +174,14 @@ get_bundle_from_github bling vim-airline
 add_to_vimrc "let g:airline#extensions#tabline#enabled = 1"
 add_to_vimrc "set laststatus=2"
 add_to_vimrc "let g:airline_powerline_fonts = 1"
+
+## May need to install cmake and python libs
+## sudo apt-get install build-essential cmake python-dev
+#get_bundle_from_github Valloric YouCompleteMe
+#pushd ~/.vim/bundle/YouCompleteMe
+#git submodule update --init --recursive
+#./install.py
+#popd
 
 mkdir -p ~/.vim/tmp
 pushd ~/.vim/tmp
