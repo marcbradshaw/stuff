@@ -205,6 +205,7 @@ cp ../vim/stuff.vim ~/.vim/
 popd
 add_to_vimrc "source ~/.vim/stuff.vim"
 
+add_to_vimrc "set term=xterm-256color"
 
 # add_to_vimrc "autocmd BufEnter * :redraw!"
 # add_to_vimrc "autocmd BufWritePost * :redraw!"
