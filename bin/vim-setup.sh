@@ -155,6 +155,8 @@ add_to_vimrc "au Syntax * RainbowParenthesesLoadBraces"
 # get_bundle_from_github maxbrunsfeld vim-yankstack
 hide_bundle vim-yankstack
 
+get_bundle_from_github vim-scripts YankRing.vim
+
 get_bundle_from_google_code conque conque-read-only 
 
 # get_bundle_from_github xolox vim-misc
