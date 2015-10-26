@@ -2,60 +2,10 @@
 
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $MYDIR
+. functions.sh
 cd ../
 
-# Setup vim just the way I likes it
-
-function add_to_bashrc {
- 
-    KEY=$1
-    VALUE=$2
-
-    if [ "$VALUE" == "" ]
-    then
-        FOUNDLINE=`grep -F -x "$KEY" ~/.bashrc`
-    else
-        # Not quite 100%, but close enough
-        # Does not enforce whole line, FIXME
-        FOUNDLINE=`grep -F "$KEY" ~/.bashrc`
-    fi
-
-    if [ "$FOUNDLINE" == "" ]
-    then
-
-        if [ "$VALUE" == "" ]
-        then
-            ADDLINE="$KEY"
-        else
-            ADDLINE="$KEY=$VALUE"
-        fi
-
-        echo Adding "$ADDLINE" to .bashrc
-        echo "$ADDLINE" >> ~/.bashrc
-    fi
-
-}
-
-function get_from_github {
-
-    OWNER=$1
-    PROJECT=$2
-
-    echo "Processing $PROJECT"
-
-    cd $MYDIR
-    cd ../remote
-
-    if [ ! -d $PROJECT ]
-    then
-        git clone https://github.com/$OWNER/$PROJECT.git
-    fi
-
-    pushd $PROJECT
-    git pull
-    popd
-
-}
+# Setup bash just the way I likes it
 
 #
 # Create directories if required
