@@ -7,16 +7,18 @@ mkdir -p local
 cd local
 PREFIX=$PWD
 
+# sudo aptitude install libevent-dev ncurses-dev
+
 cd $MYDIR
 cd ../
 pushd remote
-  if [ ! -d git ]
+  if [ ! -d tmux ]
   then
-    git clone https://github.com/git/git.git
+    git clone https://github.com/tmux/tmux.git
   fi
-  pushd git
+  pushd tmux
     git pull &&
-    make configure &&
+    sh autogen.sh &&
     ./configure --prefix=$PREFIX &&
     make &&
     make install
