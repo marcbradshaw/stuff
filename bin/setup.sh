@@ -8,3 +8,4 @@ bin/vim-setup.sh
 bin/bash-setup.sh
 bin/perl-setup.pl
 bin/screen-setup.sh
+bin/tmux-setup.pl
