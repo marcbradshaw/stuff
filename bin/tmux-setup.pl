@@ -34,9 +34,11 @@ push @config, 'setw -g window-status-format         "#[bg=colour242]#[fg=colour2
 
 my @status_parts;
 
+my @status_colours = ( 'blue:colour11', 'colour11:green', 'cyan:blue', 'colour13:red', ); 
+
 # Free Memory
 if ( -e '/usr/bin/free' ) { 
-    push @status_parts, ' #(free -h |grep "^Mem:"|tr -s " "|cut -d " " -f 4) #(free -h |grep "^Swap:"|tr -s " "|cut -d " " -f 4) ';
+    push @status_parts, ' ♈ #(free -h |grep "^Mem:"|tr -s " "|cut -d " " -f 4)  #(free -h |grep "^Swap:"|tr -s " "|cut -d " " -f 4) ';
 }
 
 # Load Average
@@ -60,13 +62,15 @@ if ( -e '/usr/bin/upower' ) {
 push @status_parts, ' %a %d %b ⌚ %H:%M ';
 
 my $status_right = q{};
-my $c1='black';
-my $c2='cyan';
+my $last_bg='black';
+
+my $i = 0;
 foreach my $part ( @status_parts ) {
-  my $c3 = $c2 eq 'cyan' ? 'blue' : 'cyan';
-  $status_right .= "#[fg=$c2]#[bg=$c1]#[fg=$c3]#[bg=$c2]$part";
-  $c1=$c2;
-  $c2=$c3;
+  my $colours = $status_colours[$i++];
+  $i = 0 if $i == scalar @status_colours;
+  my ( $bg, $fg ) = split ':', $colours;
+  $status_right .= "#[fg=$bg]#[bg=$last_bg]#[fg=$fg]#[bg=$bg]$part";
+  $last_bg = $bg;
 }
 
 push @config, 'set -g status-right \'' . $status_right . '\'';
