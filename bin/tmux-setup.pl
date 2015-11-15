@@ -79,6 +79,9 @@ push @config, 'set -g status-right-length 100';
 push @config, 'set -g status-left \'#[bg=blue]#[fg=cyan] #S #[bg=black]#[fg=blue] \'';
 push @config, 'set -g status-left-length 40';
 
+#push @config, 'bind-key j command-prompt -p "join pane from:"  "join-pane -s \'%%\'"';
+push @config, 'bind-key S command-prompt -p "send pane to:"  "join-pane -t \'%%\'"';
+
 my $filename = $ENV{'HOME'} . '/.tmux.conf';
 open my $outf, '>', $filename;
 print $outf join( "\n", @config );
