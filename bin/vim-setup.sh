@@ -93,6 +93,7 @@ add_to_vimrc "set shiftwidth" "4"
 add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
 add_to_vimrc "set showtabline" "2"
+add_to_vimrc "set backspace=indent,eol,start"
 
 pushd $MYDIR
 cp ../vim/stuff.vim ~/.vim/
