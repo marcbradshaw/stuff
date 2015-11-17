@@ -96,6 +96,8 @@ add_to_vimrc "set showtabline" "2"
 add_to_vimrc "set backspace=indent,eol,start"
 add_to_vimrc "set term=xterm-256color"
 add_to_vimrc "set mouse=a"
+add_to_vimrc "set list"
+add_to_vimrc "set listchars=tab:.,trail:,extends:,nbsp:"
 
 pushd $MYDIR
 cp ../vim/stuff.vim ~/.vim/
