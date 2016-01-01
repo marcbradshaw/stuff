@@ -14,12 +14,15 @@ pushd remote
   then
     git clone https://github.com/vim/vim.git
   fi
-  pushd vim/src
-    git pull &&
-    make distclean &&
-    make configure &&
-    ./configure --prefix=$PREFIX --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu &&
-    make &&
-    make install
+  pushd vim
+    ./configure
+    pushd vim/src
+      git pull &&
+      make distclean &&
+      make configure &&
+      ./configure --prefix=$PREFIX --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu &&
+      make &&
+      make install
+    popd
   popd
 popd
