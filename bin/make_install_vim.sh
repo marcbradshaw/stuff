@@ -16,7 +16,7 @@ pushd remote
   fi
   pushd vim
     ./configure
-    pushd vim/src
+    pushd src
       git pull &&
       make distclean &&
       make configure &&
