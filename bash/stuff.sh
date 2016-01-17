@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias vi=vim
+
 export TERM='xterm-256color'
 
 source ~/.bash/git-completion.bash
