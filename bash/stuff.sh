@@ -10,6 +10,7 @@ source ~/.bash/git-prompt.sh
 [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
 
 export EDITOR=vim
+export PAGER=~/.vim/bundle/vimpager/vimpager
 
 export PATH=~/bin:~/local/bin:~/MARC/stuff/bin:$PATH
 

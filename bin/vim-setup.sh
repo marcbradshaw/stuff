@@ -79,6 +79,8 @@ add_to_vimrc "let g:airline#extensions#tabline#enabled = 1"
 add_to_vimrc "set laststatus=2"
 add_to_vimrc "let g:airline_powerline_fonts = 1"
 
+get_bundle_from_github rkitover vimpager
+
 mkdir -p ~/.vim/tmp
 pushd ~/.vim/tmp
 git clone https://github.com/powerline/fonts.git
