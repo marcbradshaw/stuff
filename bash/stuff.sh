@@ -9,6 +9,14 @@ source ~/.bash/git-prompt.sh
 
 [ -r "$HOME/.smartcd_config" ] && ( [ -n $BASH_VERSION ] || [ -n $ZSH_VERSION ] ) && source ~/.smartcd_config
 
+shopt -s histappend
+shopt -s cmdhist
+HISTCONTROL=ignoreboth
+HISTSIZE=100000
+HISTFILESIZE=100000000
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a'
+
 export EDITOR=vim
 export PAGER=~/.vim/bundle/vimpager/vimpager
 
