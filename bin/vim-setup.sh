@@ -31,6 +31,9 @@ add_to_vimrc "execute pathogen#infect()"
 #get_bundle_from_github jlanzarotta bufexplorer
 hide_bundle bufexplorer
 
+get_bundle_from_github rust-lang rust.vim
+get_bundle_from_github racer-rust vim-racer
+
 get_bundle_from_github airblade vim-gitgutter
 add_to_vimrc "let g:gitgutter_highlight_lines " " 0"
 add_to_vimrc "set nu"
