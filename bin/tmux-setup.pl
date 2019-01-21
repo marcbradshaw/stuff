@@ -50,7 +50,7 @@ if ( -e '/proc/loadavg' ) {
 # WIFI Bit Rate
 my $interface = 'wlan0';
 if ( -e '/sbin/iwlist' ) {
-    push @status_parts, ' ⇄ #(iwlist ' . $interface . ' rate|grep "Current Bit Rate:"|cut -d ":" -f 2) ';
+    push @status_parts, ' ⇄ #(iwlist ' . $interface . ' rate|grep "Current Bit Rate="|cut -d "=" -f 2) ';
 }
 
 # Battery

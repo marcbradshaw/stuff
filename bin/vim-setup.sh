@@ -50,12 +50,12 @@ add_to_vimrc "let g:syntastic_enable_perl_checker " " 0"
 add_to_vimrc "syntax on"
 add_to_vimrc "filetype plugin indent on"
 
-get_bundle_from_github kien rainbow_parentheses.vim
-#hide_bundle rainbow_parentheses.vim
-add_to_vimrc "au VimEnter * RainbowParenthesesToggle"
-add_to_vimrc "au Syntax * RainbowParenthesesLoadRound"
-add_to_vimrc "au Syntax * RainbowParenthesesLoadSquare"
-add_to_vimrc "au Syntax * RainbowParenthesesLoadBraces"
+#get_bundle_from_github kien rainbow_parentheses.vim
+hide_bundle rainbow_parentheses.vim
+#add_to_vimrc "au VimEnter * RainbowParenthesesToggle"
+#add_to_vimrc "au Syntax * RainbowParenthesesLoadRound"
+#add_to_vimrc "au Syntax * RainbowParenthesesLoadSquare"
+#add_to_vimrc "au Syntax * RainbowParenthesesLoadBraces"
 
 # get_bundle_from_github maxbrunsfeld vim-yankstack
 hide_bundle vim-yankstack
@@ -84,6 +84,8 @@ add_to_vimrc "set laststatus=2"
 add_to_vimrc "let g:airline_powerline_fonts = 1"
 
 get_bundle_from_github rkitover vimpager
+
+get_bundle_from_github yegappan mru
 
 mkdir -p ~/.vim/tmp
 pushd ~/.vim/tmp
@@ -118,4 +120,12 @@ add_to_vimrc "source ~/.vim/stuff.vim"
 # add_to_vimrc "set foldnestmax" "1"
 # add_to_vimrc "set nofoldenable"
 # add_to_vimrc "set foldlevel" "1"
+
+#get_bundle_from_github Valloric YouCompleteMe
+hide_bundle YouCompleteMe
+#pushd ~/.vim/bundle/YouCompleteMe
+#git submodule update --init --recursive
+#./install.py
+#popd
+
 
