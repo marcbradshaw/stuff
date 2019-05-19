@@ -20,15 +20,7 @@ PROMPT_COMMAND='history -a'
 export EDITOR=vim
 export PAGER=~/.vim/bundle/vimpager/vimpager
 
-export PATH=~/bin:~/local/bin:~/MARC/stuff/bin:$PATH
-
-if [ ! -f ~/.no-local-lib ]
-then 
-    if [ "$USER" != "root" ]
-    then
-        eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-    fi
-fi
+export PATH=~/bin:~/local/bin:$PATH
 
 function __perl_version {
     perl -e 'print "$^V"'
