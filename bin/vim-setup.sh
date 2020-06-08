@@ -96,8 +96,8 @@ git pull
 popd
 
 add_to_vimrc "set expandtab"
-add_to_vimrc "set softtabstop" "4"
-add_to_vimrc "set shiftwidth" "4"
+add_to_vimrc "set softtabstop" "2"
+add_to_vimrc "set shiftwidth" "2"
 add_to_vimrc "set tabpagemax" "500"
 add_to_vimrc "set nocp"
 add_to_vimrc "set showtabline" "2"
