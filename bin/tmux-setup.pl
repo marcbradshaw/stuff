@@ -10,7 +10,7 @@ push @config, 'set -g history-limit 10000';
 push @config, 'set -g mouse';
 push @config, 'set-option -g terminal-overrides \'xterm*:smcup@:rmcup@\'';
 
-push @config, 'set -g status-utf8 on';
+#push @config, 'set -g status-utf8 on';
 push @config, 'set -g status-justify left';
 push @config, 'set -g status-bg default';
 push @config, 'set -g status-fg colour12';
@@ -38,28 +38,33 @@ my @status_colours = ( 'blue:colour11', 'colour11:green', 'cyan:blue', 'colour13
 
 # Free Memory
 if ( -e '/usr/bin/free' ) { 
-    push @status_parts, ' ♈ #(free -h |grep "^Mem:"|tr -s " "|cut -d " " -f 4)  #(free -h |grep "^Swap:"|tr -s " "|cut -d " " -f 4) ';
+    #push @status_parts, ' ♈ #(free -h |grep "^Mem:"|tr -s " "|cut -d " " -f 4)  #(free -h |grep "^Swap:"|tr -s " "|cut -d " " -f 4) ';
 }
 
 # Load Average
 if ( -e '/proc/loadavg' ) {
     #push @status_parts, ' ⚒ #(cut -d " " -f 1-3 /proc/loadavg) ';
-    push @status_parts, ' ⚒ #(cut -d " " -f 1 /proc/loadavg) ';
+    #push @status_parts, ' ⚒ #(cut -d " " -f 1 /proc/loadavg) ';
 }
 
 # WIFI Bit Rate
 my $interface = 'wlan0';
 if ( -e '/sbin/iwlist' ) {
-    push @status_parts, ' ⇄ #(iwlist ' . $interface . ' rate|grep "Current Bit Rate="|cut -d "=" -f 2) ';
+    #push @status_parts, ' ⇄ #(iwlist ' . $interface . ' rate|grep "Current Bit Rate="|cut -d "=" -f 2) ';
 }
 
 # Battery
 if ( -e '/usr/bin/upower' ) {
-    push @status_parts, ' ⚡ #(upower -i $(upower -e | grep \'BAT\')|grep "percentage:"|tr -s " " | cut -d " " -f 3) ';
+    #push @status_parts, ' ⚡ #(upower -i $(upower -e | grep \'BAT\')|grep "percentage:"|tr -s " " | cut -d " " -f 3) ';
 }
 
 # Time
-push @status_parts, ' %a %d %b ⌚ %H:%M ';
+if ( -e '/home/marc/bin/times' ) {
+    push @status_parts, ' %a %d %b #(~/bin/times) '
+}
+else {
+    push @status_parts, ' %a %d %b ⌚ %H:%M ';
+}
 
 my $status_right = q{};
 my $last_bg='black';
